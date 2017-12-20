@@ -233,6 +233,14 @@ impl ops::Mul<Quaternion> for Quaternion{
     }
 }
 
+impl ops::Mul<Vector3> for Quaternion{
+    type Output = Vector3;
+
+    fn mul(self, _rhs: Vector3) -> Vector3{
+        _rhs.rotate(self)
+    }
+}
+
 impl ops::Sub<Quaternion> for Quaternion{
     type Output = Quaternion;
 

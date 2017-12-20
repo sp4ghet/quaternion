@@ -10,14 +10,16 @@ use quaternion::Quaternion;
 use quaternion::Vector3;
 
 let q0 = Quaternion::factory(0.9659258, 0.1929123, 0.07716493, 0.1543299);
-let q1 = Quaternion::from_axis_angle(Vector3::factory(10., 4., 8.), 30.);
+let same = Quaternion::from_axis_angle(Vector3::factory(10., 4., 8.), 30.); // same == q0
 let id = Quaternion::identity();
-// q0 == q1
+
+let q1 = Quaternion::factory(0.5, 0.3633762, 0.4360515, 0.6540772);
 let v : Vector3 = Vector3::factory(5., 3., 2.);
 
 // quaternion dot product (commutative), is equal to cos(theta/2) of angle between two rotations
 let half_cosine: f32 = q0.dot(q1);
 q0 * 12.; // quaternion scalar product
+q0 * v;
 q0 * q1; // quaternion quaternion product (non-commutative)
 q0 + q1; // addition (commutative)
 q0 - q1; // subtraction
