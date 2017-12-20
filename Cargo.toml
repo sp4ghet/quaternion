@@ -1,0 +1,14 @@
+[package]
+name = "quaternion"
+version = "0.1.0"
+authors = ["Rikuo Hasegawa <rikuo.hase1997@gmail.com>"]
+
+[dependencies]
+
+[lib]
+name = "quaternion"
+path = "src/lib.rs"
+
+[[bin]]
+name = "quaternion"
+path = "src/main.rs"
